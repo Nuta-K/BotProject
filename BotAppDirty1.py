@@ -18,7 +18,7 @@ def start(message):
 def summa(message):
     global amount
     try:
-        amount = int(message.text.strip())  # strip удаляет пробелы
+        amount = int(message.text.strip())
     except ValueError:
         bot.send_message(message.chat.id, 'Invalid input format. Please try again.')
         bot.register_next_step_handler(message, summa)
