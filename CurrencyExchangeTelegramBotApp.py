@@ -58,14 +58,15 @@ def my_currency(message):
         bot.send_message(message.chat.id, f'You get {round(result, 2)} {values[1]}. Enter another amount')
         bot.register_next_step_handler(message, summa)
     except ValueError:
-        bot.send_message(message.chat.id, 'One or both currency are not support. Enter another paar of currency')
+        bot.send_message(message.chat.id, 'One or both currency are not support. Enter another pair of currency')
         bot.register_next_step_handler(message, my_currency)
     except IndexError:
-        bot.send_message(message.chat.id, 'One or both currency are not support. Enter another paar of currency')
+        bot.send_message(message.chat.id, 'One or both currencies are not supported. Enter another pair of currencies')
     except OverflowError:
         bot.send_message(message.chat.id, 'Invalid input format')
     except Exception as e:
-        bot.send_message(message.chat.id,f'The selected currencies cannot be exchanged at this time. Tap on the "Other currency" button to choose new paar of currency')
+        bot.send_message(message.chat.id,f'The selected currencies cannot be exchanged at this time. Tap on the '
+                                         f'"Other currency" button to choose new pair of currencies')
         return
 
 
